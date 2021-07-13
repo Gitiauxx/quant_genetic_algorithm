@@ -246,19 +246,19 @@ class CircuitGA(GA):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--num_inputs', type=int, default=8)
-    parser.add_argument('--num_ancillas', type=int, default=6)
-    parser.add_argument('--depth', type=int, default=9)
+    parser.add_argument('--num_inputs', type=int, default=16)
+    parser.add_argument('--num_ancillas', type=int, default=9)
+    parser.add_argument('--depth', type=int, default=21)
     parser.add_argument('--mutation_rate', type=int, default=0.5)
-    parser.add_argument('--num_iterations', type=int, default=500)
-    parser.add_argument('--gen_size', type=int, default=250)
+    parser.add_argument('--num_iterations', type=int, default=5000)
+    parser.add_argument('--gen_size', type=int, default=1000)
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--run', default='test')
 
     args = parser.parse_args()
 
 
-    depth = args.detph
+    depth = args.depth
     num_ancillas = args.num_ancillas
     num_inputs = args.num_inputs
     mutation_rate = args.mutation_rate
@@ -271,9 +271,11 @@ if __name__ == '__main__':
                    pop_size=args.gen_size,
                    n_genes=n_genes,
                    mutation_rate=mutation_rate,
-                   max_gen=args.num_iteration,
+                   max_gen=args.num_iterations,
                    stop=0)
     circuit, fitness = ca.run()
+
+    print(f'solution is: {fitness}')
 
     tstamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     save_dir = '/scratch/xgitiaux/quantdist/genetic_search'
