@@ -16,4 +16,4 @@
 source ../fvae-env/bin/activate
 
 echo $SLURM_ARRAY_TASK_ID
-../fvae-env/bin/python3 main.py --depth 9 --num_ancillas 6 --seed $SLURM_ARRAY_TASK_ID --num_iterations 20000 --run run8  --num_inputs 8 --gen_size 20000
+../fvae-env/bin/python3 main.py --depth 9 --num_ancillas 6 --seed $SLURM_ARRAY_TASK_ID --num_iterations 100000 --run run9  --num_inputs 8 --gen_size 20000

@@ -44,6 +44,6 @@ if __name__ == '__main__':
     save_dir = f'{save_dir}/run_{args.run}_depth_{args.depth}_inputs_{args.num_inputs}_ancillas_{args.num_ancillas}_gensize_{args.gen_size}'
     os.makedirs(save_dir, exist_ok=True)
 
-    results = {'succes': fitness == 0, 'circuit': circuit}
+    results = {'succes': fitness == 0, 'circuit': circuit, 'cost': fitness}
     with open(f'{save_dir}/results_{tstamp}.json', 'w') as file:
         json.dump(results, file)
