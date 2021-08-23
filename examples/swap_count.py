@@ -284,5 +284,6 @@ if __name__ == '__main__':
 
     results = {'succes': fitness == 0, 'circuit': circuit, 'cost': fitness}
     rind = np.random.randint(0, 2**16)
+    print(rind)
     with open(f'{save_dir}/results_{tstamp}_{rind}.json', 'w') as file:
         json.dump(results, file)
