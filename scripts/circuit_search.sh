@@ -6,7 +6,7 @@
 #SBATCH --mail-user=xgitiaux@gmu.edu
 #SBATCH --mail-type=END
 #SBATCH --export=ALL
-#SBATCH --partition=contrib
+#SBATCH --partition=normal
 #SBATCH --nodes 1
 #SBATCH --tasks 1
 #SBATCH --mem=64G
