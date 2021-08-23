@@ -6,11 +6,11 @@
 #SBATCH --mail-user=xgitiaux@gmu.edu
 #SBATCH --mail-type=END
 #SBATCH --export=ALL
-#SBATCH --partition=all-LoPri
+#SBATCH --partition=contrib
 #SBATCH --nodes 1
 #SBATCH --tasks 1
 #SBATCH --mem=64G
-#SBATCH --qos=csqos
+##SBATCH --qos=c
 #SBATCH --array=0-100
 
 source ../fvae-env/bin/activate
