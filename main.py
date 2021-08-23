@@ -46,5 +46,5 @@ if __name__ == '__main__':
 
     results = {'succes': fitness == 0, 'circuit': circuit, 'cost': fitness}
     rind = np.random.randint(0, 2 ** 16)
-    with open(f'{save_dir}/results_{tstamp}.json', 'w') as file:
+    with open(f'{save_dir}/results_{tstamp}_{rind}.json', 'w') as file:
         json.dump(results, file)
